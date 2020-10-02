@@ -33,5 +33,5 @@ func (m *MyLog) Print(args ...interface{}) {
 
 func (m *MyLog) SetLogLevel(level string) {
 	m.LogLevel = level
-	m.Debug("Log Level: %s\n", m.LogLevel)
+	m.Debug("Log Level: ", m.LogLevel)
 }
