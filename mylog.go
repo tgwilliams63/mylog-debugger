@@ -1,7 +1,8 @@
 package mylog_debugger
 
 import (
-"log"
+	"log"
+	"os"
 )
 
 type MyLog struct {
@@ -24,10 +25,12 @@ func (m *MyLog) Debug(args ...interface{}) {
 }
 
 func (m *MyLog) Fatal(args ...interface{}) {
+	log.SetOutput(os.Stderr)
 	log.Fatal(args...)
 }
 
 func (m *MyLog) Print(args ...interface{}) {
+	log.SetOutput(os.Stdout)
 	log.Print(args...)
 }
 
